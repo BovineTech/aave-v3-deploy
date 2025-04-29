@@ -1,12 +1,12 @@
 import { parseUnits } from "ethers/lib/utils";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 import {
   ICommonConfiguration,
   eEthereumNetwork,
   eArbitrumNetwork,
   TransferStrategy,
   AssetType,
-} from "../../helpers/types";
+} from "../../deployHelpers/types";
 import {
   rateStrategyStableOne,
   rateStrategyStableTwo,
@@ -184,3 +184,4 @@ export const CommonsConfig: ICommonConfiguration = {
     rateStrategyStableTwo,
   },
 };
+

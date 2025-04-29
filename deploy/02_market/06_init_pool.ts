@@ -1,16 +1,16 @@
-import { ZERO_ADDRESS } from "./../../helpers/constants";
-import { getPoolConfiguratorProxy } from "./../../helpers/contract-getters";
-import { L2_POOL_IMPL_ID } from "./../../helpers/deploy-ids";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
+import { getPoolConfiguratorProxy } from "../../deployHelpers/contract-getters";
+import { L2_POOL_IMPL_ID } from "../../deployHelpers/deploy-ids";
 import {
   ConfigNames,
   isL2PoolSupported,
   loadPoolConfig,
-} from "./../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
-import { V3_CORE_VERSION } from "../../helpers/constants";
-import { checkRequiredEnvironment } from "../../helpers/market-config-helpers";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
+import { V3_CORE_VERSION } from "../../deployHelpers/constants";
+import { checkRequiredEnvironment } from "../../deployHelpers/market-config-helpers";
 import {
   L2_ENCODER,
   POOL_ADDRESSES_PROVIDER_ID,
@@ -18,10 +18,10 @@ import {
   POOL_CONFIGURATOR_PROXY_ID,
   POOL_IMPL_ID,
   POOL_PROXY_ID,
-} from "../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import { PoolAddressesProvider } from "../../typechain";
-import { getContract, waitForTx } from "../../helpers/utilities/tx";
-import { MARKET_NAME } from "../../helpers/env";
+import { getContract, waitForTx } from "../../deployHelpers/utilities/tx";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -139,3 +139,4 @@ func.dependencies = ["before-deploy", "core", "periphery-pre", "provider"];
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+

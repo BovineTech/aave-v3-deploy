@@ -1,16 +1,16 @@
-import { eNetwork } from "./../../helpers/types";
-import { getFirstSigner } from "../../helpers/utilities/signer";
-import { loadPoolConfig } from "../../helpers/market-config-helpers";
+import { eNetwork } from "../../deployHelpers/types";
+import { getFirstSigner } from "../../deployHelpers/utilities/signer";
+import { loadPoolConfig } from "../../deployHelpers/market-config-helpers";
 import {
   getPoolAddressesProvider,
   getPoolConfiguratorProxy,
-} from "../../helpers/contract-getters";
-import { IInterestRateStrategyParams } from "../../helpers/types";
+} from "../../deployHelpers/contract-getters";
+import { IInterestRateStrategyParams } from "../../deployHelpers/types";
 import { task } from "hardhat/config";
-import { waitForTx } from "../../helpers/utilities/tx";
-import { getAaveProtocolDataProvider } from "../../helpers/contract-getters";
-import { MARKET_NAME } from "../../helpers/env";
-import { FORK } from "../../helpers/hardhat-config-helpers";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
+import { getAaveProtocolDataProvider } from "../../deployHelpers/contract-getters";
+import { MARKET_NAME } from "../../deployHelpers/env";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
 import { diff, formatters } from "jsondiffpatch";
 import chalk from "chalk";
 import { exit } from "process";
@@ -189,3 +189,4 @@ task(`review-rate-strategies`, ``)
       }
     }
   );
+

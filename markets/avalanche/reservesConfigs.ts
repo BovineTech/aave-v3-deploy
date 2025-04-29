@@ -1,5 +1,8 @@
-import { rateStrategyVolatileOne, rateStrategyStableOne } from "./../aave/rateStrategies";
-import { eContractid, IReserveParams } from "../../helpers/types";
+import {
+  rateStrategyVolatileOne,
+  rateStrategyStableOne,
+} from "./../aave/rateStrategies";
+import { eContractid, IReserveParams } from "../../deployHelpers/types";
 
 export const strategyWAVAX: IReserveParams = {
   strategy: rateStrategyVolatileOne,
@@ -90,3 +93,4 @@ export const strategyWBTC: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: false,
 };
+

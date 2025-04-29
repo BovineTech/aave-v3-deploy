@@ -1,5 +1,8 @@
-import { rateStrategyStableOne, rateStrategyVolatileOne } from "./../aave/rateStrategies";
-import { eContractid, IReserveParams } from "../../helpers/types";
+import {
+  rateStrategyStableOne,
+  rateStrategyVolatileOne,
+} from "./../aave/rateStrategies";
+import { eContractid, IReserveParams } from "../../deployHelpers/types";
 
 export const strategyWFTM: IReserveParams = {
   strategy: rateStrategyVolatileOne,
@@ -126,3 +129,4 @@ export const strategySUSHI: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: false,
 };
+

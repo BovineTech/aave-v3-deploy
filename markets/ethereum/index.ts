@@ -1,4 +1,7 @@
-import { eEthereumNetwork, IAaveConfiguration } from "../../helpers/types";
+import {
+  eEthereumNetwork,
+  IAaveConfiguration,
+} from "../../deployHelpers/types";
 import { AaveMarket } from "../aave/index";
 
 // ----------------
@@ -24,3 +27,4 @@ export const EthereumV3Market: IAaveConfiguration = {
 };
 
 export default EthereumV3Market;
+

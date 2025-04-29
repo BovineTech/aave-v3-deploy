@@ -1,9 +1,9 @@
-import { deployContract } from "./../../helpers/utilities/tx";
+import { deployContract } from "../../deployHelpers/utilities/tx";
 import { task } from "hardhat/config";
 import {
   chainlinkAggregatorProxy,
   chainlinkEthUsdAggregatorProxy,
-} from "../../helpers/constants";
+} from "../../deployHelpers/constants";
 
 task(
   `deploy-UiPoolDataProvider`,
@@ -32,3 +32,4 @@ task(
   console.log("UiPoolDataProviderV3:", artifact.address);
   console.log("Network:", hre.network.name);
 });
+

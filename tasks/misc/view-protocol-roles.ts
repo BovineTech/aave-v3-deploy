@@ -1,11 +1,11 @@
 import { WrappedTokenGatewayV3__factory } from "./../../typechain/factories/@aave/periphery-v3/contracts/misc/WrappedTokenGatewayV3__factory";
-import { getFirstSigner } from "./../../helpers/utilities/signer";
-import { getAddressFromJson } from "./../../helpers/utilities/tx";
+import { getFirstSigner } from "../../deployHelpers/utilities/signer";
+import { getAddressFromJson } from "../../deployHelpers/utilities/tx";
 import {
   EMERGENCY_ADMIN,
   POOL_ADMIN,
   ZERO_ADDRESS,
-} from "./../../helpers/constants";
+} from "../../deployHelpers/constants";
 import {
   AaveEcosystemReserveController,
   EmissionManager,
@@ -15,22 +15,22 @@ import {
   getEmissionManager,
   getIncentivesV2,
   getOwnableContract,
-} from "./../../helpers/contract-getters";
-import { EMISSION_MANAGER_ID } from "./../../helpers/deploy-ids";
-import { FORK } from "../../helpers/hardhat-config-helpers";
+} from "../../deployHelpers/contract-getters";
+import { EMISSION_MANAGER_ID } from "../../deployHelpers/deploy-ids";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
 import {
   TREASURY_PROXY_ID,
   TREASURY_CONTROLLER_ID,
-} from "../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import { InitializableAdminUpgradeabilityProxy } from "../../typechain";
 import {
   getACLManager,
   getPoolAddressesProvider,
   getPoolAddressesProviderRegistry,
   getWrappedTokenGateway,
-} from "../../helpers/contract-getters";
+} from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
-import { getProxyAdminBySlot } from "../../helpers/utilities/tx";
+import { getProxyAdminBySlot } from "../../deployHelpers/utilities/tx";
 import { exit } from "process";
 
 task(
@@ -273,3 +273,4 @@ task(
 
   return;
 });
+

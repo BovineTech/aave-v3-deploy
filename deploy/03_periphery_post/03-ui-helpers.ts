@@ -1,11 +1,11 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
 import {
   chainlinkAggregatorProxy,
   chainlinkEthUsdAggregatorProxy,
-} from "../../helpers/constants";
-import { eNetwork } from "../../helpers";
+} from "../../deployHelpers/constants";
+import { eNetwork } from "../../deployHelpers";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -44,3 +44,4 @@ const func: DeployFunction = async function ({
 func.tags = ["periphery-post", "ui-helpers"];
 
 export default func;
+

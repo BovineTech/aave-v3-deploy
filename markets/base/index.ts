@@ -1,6 +1,6 @@
-import { eBaseNetwork, IAaveConfiguration } from "./../../helpers/types";
+import { eBaseNetwork, IAaveConfiguration } from "../../deployHelpers/types";
 import AaveMarket from "../aave";
-import { ZERO_ADDRESS } from "../../helpers";
+import { ZERO_ADDRESS } from "../../deployHelpers";
 import {
   strategyUSDC,
   strategyWETH,
@@ -43,3 +43,4 @@ export const BaseConfig: IAaveConfiguration = {
 };
 
 export default BaseConfig;
+

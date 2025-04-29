@@ -1,26 +1,26 @@
-import { POOL_ADMIN } from "./../../helpers/constants";
-import { getProxyImplementationBySlot } from "./../../helpers/utilities/tx";
-import { getFirstSigner } from "./../../helpers/utilities/signer";
-import { eNetwork } from "./../../helpers/types";
-import { MARKET_NAME } from "./../../helpers/env";
+import { POOL_ADMIN } from "../../deployHelpers/constants";
+import { getProxyImplementationBySlot } from "../../deployHelpers/utilities/tx";
+import { getFirstSigner } from "../../deployHelpers/utilities/signer";
+import { eNetwork } from "../../deployHelpers/types";
+import { MARKET_NAME } from "../../deployHelpers/env";
 import {
   loadPoolConfig,
   getParamPerNetwork,
   isTestnetMarket,
-} from "./../../helpers/market-config-helpers";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+} from "../../deployHelpers/market-config-helpers";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 import {
   TREASURY_CONTROLLER_ID,
   TREASURY_IMPL_ID,
-} from "../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
-import { TREASURY_PROXY_ID } from "../../helpers/deploy-ids";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
+import { TREASURY_PROXY_ID } from "../../deployHelpers/deploy-ids";
 import {
   InitializableAdminUpgradeabilityProxy,
   waitForTx,
-} from "../../helpers";
+} from "../../deployHelpers";
 import {
   AaveEcosystemReserveController__factory,
   AaveEcosystemReserveV2,
@@ -136,3 +136,4 @@ func.dependencies = [];
 func.id = "Treasury";
 
 export default func;
+

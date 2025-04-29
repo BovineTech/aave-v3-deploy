@@ -1,12 +1,12 @@
-import { getReserveAddress } from "../../helpers/market-config-helpers";
+import { getReserveAddress } from "../../deployHelpers/market-config-helpers";
 import { task } from "hardhat/config";
-import { waitForTx } from "../../helpers/utilities/tx";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
 import {
   ConfigNames,
   loadPoolConfig,
-} from "../../helpers/market-config-helpers";
-import { getPoolConfiguratorProxy } from "../../helpers/contract-getters";
-import { MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers/market-config-helpers";
+import { getPoolConfiguratorProxy } from "../../deployHelpers/contract-getters";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 task(
   `setup-isolation-mode`,
@@ -45,3 +45,4 @@ task(
     );
   }
 });
+

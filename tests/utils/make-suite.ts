@@ -2,10 +2,10 @@ import {
   ConfigNames,
   isTestnetMarket,
   loadPoolConfig,
-} from "./../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import { Signer } from "ethers";
-import { evmRevert, evmSnapshot } from "../../helpers/utilities/tx";
-import { tEthereumAddress } from "../../helpers/types";
+import { evmRevert, evmSnapshot } from "../../deployHelpers/utilities/tx";
+import { tEthereumAddress } from "../../deployHelpers/types";
 import { Pool } from "../../typechain";
 import { AaveProtocolDataProvider } from "../../typechain";
 import { AToken } from "../../typechain";
@@ -29,7 +29,7 @@ import {
   POOL_CONFIGURATOR_PROXY_ID,
   POOL_DATA_PROVIDER,
   POOL_PROXY_ID,
-} from "../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import {
   getAToken,
   getERC20,
@@ -37,11 +37,11 @@ import {
   getStableDebtToken,
   getVariableDebtToken,
   getWETH,
-} from "../../helpers/contract-getters";
+} from "../../deployHelpers/contract-getters";
 
 import { ethers, deployments } from "hardhat";
-import { getEthersSigners } from "../../helpers/utilities/signer";
-import { MARKET_NAME } from "../../helpers/env";
+import { getEthersSigners } from "../../deployHelpers/utilities/signer";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 export interface SignerWithAddress {
   signer: Signer;
@@ -244,3 +244,4 @@ export function makeSuite(name: string, tests: (testEnv: TestEnv) => void) {
     });
   });
 }
+

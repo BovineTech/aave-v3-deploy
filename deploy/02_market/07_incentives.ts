@@ -1,33 +1,36 @@
-import { getParamPerNetwork } from "./../../helpers/market-config-helpers";
-import { EMPTY_STORAGE_SLOT, ZERO_ADDRESS } from "./../../helpers/constants";
+import { getParamPerNetwork } from "../../deployHelpers/market-config-helpers";
+import {
+  EMPTY_STORAGE_SLOT,
+  ZERO_ADDRESS,
+} from "../../deployHelpers/constants";
 import {
   EMISSION_MANAGER_ID,
   INCENTIVES_STAKED_TOKEN_STRATEGY_ID,
   POOL_ADDRESSES_PROVIDER_ID,
   STAKE_AAVE_PROXY,
-} from "./../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import {
   EmissionManager,
   PoolAddressesProvider,
   RewardsController,
 } from "../../typechain";
-import { V3_PERIPHERY_VERSION } from "../../helpers/constants";
+import { V3_PERIPHERY_VERSION } from "../../deployHelpers/constants";
 import {
   INCENTIVES_PULL_REWARDS_STRATEGY_ID,
   INCENTIVES_V2_IMPL_ID,
   INCENTIVES_PROXY_ID,
-} from "../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
 import {
   ConfigNames,
   eNetwork,
   getContract,
   loadPoolConfig,
   waitForTx,
-} from "../../helpers";
-import { MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 /**
  * @notice An incentives proxy can be deployed per network or per market.
@@ -177,3 +180,4 @@ func.tags = ["market", "IncentivesProxy"];
 func.dependencies = [];
 
 export default func;
+

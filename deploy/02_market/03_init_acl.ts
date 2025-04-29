@@ -1,15 +1,15 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
-import { V3_CORE_VERSION, ZERO_BYTES_32 } from "../../helpers/constants";
-import { waitForTx } from "../../helpers/utilities/tx";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
+import { V3_CORE_VERSION, ZERO_BYTES_32 } from "../../deployHelpers/constants";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
 import { ACLManager, PoolAddressesProvider } from "../../typechain";
-import { checkRequiredEnvironment } from "../../helpers/market-config-helpers";
+import { checkRequiredEnvironment } from "../../deployHelpers/market-config-helpers";
 import {
   ACL_MANAGER_ID,
   POOL_ADDRESSES_PROVIDER_ID,
-} from "../../helpers/deploy-ids";
-import { MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers/deploy-ids";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { getNamedAccounts, deployments } = hre;
@@ -89,3 +89,4 @@ func.dependencies = ["before-deploy", "core", "periphery-pre", "provider"];
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+

@@ -1,13 +1,13 @@
-import { getReserveAddress } from "../../helpers/market-config-helpers";
+import { getReserveAddress } from "../../deployHelpers/market-config-helpers";
 import { task } from "hardhat/config";
-import { waitForTx } from "../../helpers/utilities/tx";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
 import {
   ConfigNames,
   loadPoolConfig,
-} from "../../helpers/market-config-helpers";
-import { getPoolConfiguratorProxy } from "../../helpers/contract-getters";
+} from "../../deployHelpers/market-config-helpers";
+import { getPoolConfiguratorProxy } from "../../deployHelpers/contract-getters";
 import { BigNumber } from "ethers";
-import { MARKET_NAME } from "../../helpers/env";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 task(
   `setup-liquidation-protocol-fee`,
@@ -49,3 +49,4 @@ task(
     );
   }
 });
+

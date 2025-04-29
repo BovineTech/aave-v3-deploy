@@ -2,13 +2,13 @@ import {
   ConfigNames,
   isTestnetMarket,
   loadPoolConfig,
-} from "./../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { WRAPPED_NATIVE_TOKEN_PER_NETWORK } from "../../helpers/constants";
-import { eNetwork } from "../../helpers/types";
-import { POOL_PROXY_ID, TESTNET_TOKEN_PREFIX } from "../../helpers";
-import { MARKET_NAME } from "../../helpers/env";
+import { WRAPPED_NATIVE_TOKEN_PER_NETWORK } from "../../deployHelpers/constants";
+import { eNetwork } from "../../deployHelpers/types";
+import { POOL_PROXY_ID, TESTNET_TOKEN_PREFIX } from "../../deployHelpers";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -51,3 +51,4 @@ func.dependencies = [];
 func.id = "WrappedTokenGateway";
 
 export default func;
+

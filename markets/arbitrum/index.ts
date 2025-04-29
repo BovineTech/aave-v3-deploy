@@ -1,6 +1,9 @@
-import { eArbitrumNetwork, IAaveConfiguration } from "./../../helpers/types";
+import {
+  eArbitrumNetwork,
+  IAaveConfiguration,
+} from "../../deployHelpers/types";
 import AaveMarket from "../aave";
-import { ZERO_ADDRESS } from "../../helpers";
+import { ZERO_ADDRESS } from "../../deployHelpers";
 import {
   strategyDAI,
   strategyUSDC,
@@ -88,3 +91,4 @@ export const ArbitrumConfig: IAaveConfiguration = {
 };
 
 export default ArbitrumConfig;
+

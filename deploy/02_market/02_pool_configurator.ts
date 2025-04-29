@@ -1,12 +1,12 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
 import {
   POOL_ADDRESSES_PROVIDER_ID,
   POOL_CONFIGURATOR_IMPL_ID,
   RESERVES_SETUP_HELPER_ID,
-} from "../../helpers/deploy-ids";
-import { getPoolConfiguratorProxy, waitForTx } from "../../helpers";
+} from "../../deployHelpers/deploy-ids";
+import { getPoolConfiguratorProxy, waitForTx } from "../../deployHelpers";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -48,3 +48,4 @@ func.id = "PoolConfigurator";
 func.tags = ["market"];
 
 export default func;
+

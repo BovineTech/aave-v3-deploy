@@ -1,7 +1,7 @@
 import { task } from "hardhat/config";
-import { loadPoolConfig } from "../../helpers/market-config-helpers";
+import { loadPoolConfig } from "../../deployHelpers/market-config-helpers";
 
-import { addMarketToRegistry } from "../../helpers/init-helpers";
+import { addMarketToRegistry } from "../../deployHelpers/init-helpers";
 
 task("market-registry:add", "Provide address provider to registry")
   .addParam("pool")
@@ -12,3 +12,4 @@ task("market-registry:add", "Provide address provider to registry")
 
     await addMarketToRegistry(ProviderId, addressesProvider);
   });
+

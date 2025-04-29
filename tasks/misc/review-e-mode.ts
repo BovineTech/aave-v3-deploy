@@ -1,24 +1,27 @@
-import { eNetwork } from "./../../helpers/types";
+import { eNetwork } from "../../deployHelpers/types";
 import {
   POOL_CONFIGURATOR_PROXY_ID,
   POOL_ADDRESSES_PROVIDER_ID,
-} from "../../helpers/deploy-ids";
-import { getAddressFromJson, waitForTx } from "../../helpers/utilities/tx";
+} from "../../deployHelpers/deploy-ids";
+import {
+  getAddressFromJson,
+  waitForTx,
+} from "../../deployHelpers/utilities/tx";
 import {
   getOracleByAsset,
   loadPoolConfig,
-} from "../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import {
   getPool,
   getPoolAddressesProvider,
   getPoolConfiguratorProxy,
-} from "../../helpers/contract-getters";
+} from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
-import { MARKET_NAME } from "../../helpers/env";
-import { FORK } from "../../helpers/hardhat-config-helpers";
+import { MARKET_NAME } from "../../deployHelpers/env";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
 import { diff, formatters } from "jsondiffpatch";
 import chalk from "chalk";
-import { ZERO_ADDRESS } from "../../helpers";
+import { ZERO_ADDRESS } from "../../deployHelpers";
 
 task(`review-e-mode`, ``)
   .addFlag("fix")
@@ -96,3 +99,4 @@ task(`review-e-mode`, ``)
       );
     }
   });
+

@@ -1,12 +1,12 @@
 import {
   getAToken,
   getPoolAddressesProvider,
-} from "../../helpers/contract-getters";
-import { POOL_ADDRESSES_PROVIDER_ID } from "../../helpers/deploy-ids";
-import { getAddressFromJson } from "../../helpers/utilities/tx";
-import { getAaveProtocolDataProvider } from "../../helpers/contract-getters";
+} from "../../deployHelpers/contract-getters";
+import { POOL_ADDRESSES_PROVIDER_ID } from "../../deployHelpers/deploy-ids";
+import { getAddressFromJson } from "../../deployHelpers/utilities/tx";
+import { getAaveProtocolDataProvider } from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
-import { FORK } from "../../helpers/hardhat-config-helpers";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
 
 interface ATokenConfig {
   revision: string;
@@ -58,3 +58,4 @@ task(`review-atokens`)
     }
     return ATokenConfigs;
   });
+

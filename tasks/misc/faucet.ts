@@ -1,5 +1,5 @@
 import { task } from "hardhat/config";
-import { getFaucet } from "../../helpers/contract-getters";
+import { getFaucet } from "../../deployHelpers/contract-getters";
 
 task(
   `transfer-faucet-ownership`,
@@ -18,3 +18,4 @@ task(
     console.log(`Faucet contract transferred to relayer ${owner}`);
     console.log(`TX ${tx}`);
   });
+

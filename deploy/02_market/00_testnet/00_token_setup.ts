@@ -1,29 +1,29 @@
 import {
   STAKE_AAVE_PROXY,
   TESTNET_REWARD_TOKEN_PREFIX,
-} from "../../../helpers/deploy-ids";
+} from "../../../deployHelpers/deploy-ids";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../../deployHelpers/env";
 import {
   checkRequiredEnvironment,
   ConfigNames,
   isIncentivesEnabled,
   isProductionMarket,
   loadPoolConfig,
-} from "../../../helpers/market-config-helpers";
-import { eNetwork } from "../../../helpers/types";
+} from "../../../deployHelpers/market-config-helpers";
+import { eNetwork } from "../../../deployHelpers/types";
 import {
   // FAUCET_ID,
   TESTNET_TOKEN_PREFIX,
   FAUCET_OWNABLE_ID,
-} from "../../../helpers/deploy-ids";
+} from "../../../deployHelpers/deploy-ids";
 import Bluebird from "bluebird";
 import {
   deployInitializableAdminUpgradeabilityProxy,
   setupStkAave,
-} from "../../../helpers/contract-deployments";
-import { MARKET_NAME, PERMISSIONED_FAUCET } from "../../../helpers/env";
+} from "../../../deployHelpers/contract-deployments";
+import { MARKET_NAME, PERMISSIONED_FAUCET } from "../../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -193,3 +193,4 @@ func.dependencies = ["before-deploy", "periphery-pre"];
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+

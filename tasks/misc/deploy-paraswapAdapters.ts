@@ -6,11 +6,11 @@ import {
   POOL_ADDRESSES_PROVIDER_ID,
   POOL_ADMIN,
   V3_PERIPHERY_VERSION,
-} from "../../helpers";
-import { deployContract } from "./../../helpers/utilities/tx";
+} from "../../deployHelpers";
+import { deployContract } from "../../deployHelpers/utilities/tx";
 
-import { getParamPerNetwork } from "../../helpers/market-config-helpers";
-import { MARKET_NAME } from "../../helpers/env";
+import { getParamPerNetwork } from "../../deployHelpers/market-config-helpers";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 task(`deploy-paraswap-adapters`, `Deploys all paraswap adapters`).setAction(
   async (_, hre) => {
@@ -135,3 +135,4 @@ task(
   ]);
   console.log("ParaSwapWithdrawSwapAdapter Address", artifact.address);
 });
+

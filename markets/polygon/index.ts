@@ -1,11 +1,11 @@
-import { ePolygonNetwork, IAaveConfiguration } from "../../helpers/types";
+import { ePolygonNetwork, IAaveConfiguration } from "../../deployHelpers/types";
 import { AaveMarket } from "../aave/index";
 import {
   strategyDAI,
   strategyUSDT,
   strategyWETH,
 } from "../aave/reservesConfigs";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 import {
   strategyAGEUR,
   strategyBAL,
@@ -124,3 +124,4 @@ export const PolygonMarket: IAaveConfiguration = {
 };
 
 export default PolygonMarket;
+

@@ -1,9 +1,9 @@
-import { POOL_ADMIN } from "./../../helpers/constants";
-import { FORK } from "./../../helpers/hardhat-config-helpers";
+import { POOL_ADMIN } from "../../deployHelpers/constants";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
 import {
   EMISSION_MANAGER_ID,
   POOL_ADDRESSES_PROVIDER_ID,
-} from "./../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import {
   getACLManager,
   getEmissionManager,
@@ -11,14 +11,17 @@ import {
   getPoolAddressesProvider,
   getPoolAddressesProviderRegistry,
   getWrappedTokenGateway,
-} from "./../../helpers/contract-getters";
+} from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
-import { getAddressFromJson, waitForTx } from "../../helpers/utilities/tx";
+import {
+  getAddressFromJson,
+  waitForTx,
+} from "../../deployHelpers/utilities/tx";
 import { exit } from "process";
 import {
   GOVERNANCE_BRIDGE_EXECUTOR,
   MULTISIG_ADDRESS,
-} from "../../helpers/constants";
+} from "../../deployHelpers/constants";
 
 task(
   `transfer-protocol-ownership`,
@@ -276,3 +279,4 @@ task(
 
   return;
 });
+

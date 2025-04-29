@@ -1,11 +1,14 @@
-import { getAaveOracle } from "./../../helpers/contract-getters";
-import { getAddressFromJson, waitForTx } from "../../helpers/utilities/tx";
+import { getAaveOracle } from "../../deployHelpers/contract-getters";
+import {
+  getAddressFromJson,
+  waitForTx,
+} from "../../deployHelpers/utilities/tx";
 import { task } from "hardhat/config";
-import { FORK } from "../../helpers/hardhat-config-helpers";
-import { eNetwork } from "../../helpers/types";
-import { ORACLE_ID } from "../../helpers/deploy-ids";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
+import { eNetwork } from "../../deployHelpers/types";
+import { ORACLE_ID } from "../../deployHelpers/deploy-ids";
 import { getAddress } from "ethers/lib/utils";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 
 task(`set-fallback-oracle`)
   .addOptionalParam("address")
@@ -33,3 +36,4 @@ task(`set-fallback-oracle`)
       assert: updatedFallbackOracle === newFallbackOracleAddress,
     });
   });
+

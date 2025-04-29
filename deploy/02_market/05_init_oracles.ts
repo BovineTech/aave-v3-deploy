@@ -1,25 +1,25 @@
 import {
   getSubTokensByPrefix,
   isIncentivesEnabled,
-} from "../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import {
   FALLBACK_ORACLE_ID,
   ORACLE_ID,
   TESTNET_REWARD_TOKEN_PREFIX,
-} from "../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
 import {
   MOCK_CHAINLINK_AGGREGATORS_PRICES,
   V3_CORE_VERSION,
-} from "../../helpers/constants";
-import { getContract, waitForTx } from "../../helpers/utilities/tx";
+} from "../../deployHelpers/constants";
+import { getContract, waitForTx } from "../../deployHelpers/utilities/tx";
 import {
   AaveOracle,
   PoolAddressesProvider,
   PriceOracle__factory,
 } from "../../typechain";
-import { POOL_ADDRESSES_PROVIDER_ID } from "../../helpers/deploy-ids";
+import { POOL_ADDRESSES_PROVIDER_ID } from "../../deployHelpers/deploy-ids";
 import { getAddress } from "@ethersproject/address";
 import {
   checkRequiredEnvironment,
@@ -27,10 +27,10 @@ import {
   getReserveAddresses,
   isProductionMarket,
   loadPoolConfig,
-} from "../../helpers/market-config-helpers";
-import { eNetwork } from "../../helpers/types";
+} from "../../deployHelpers/market-config-helpers";
+import { eNetwork } from "../../deployHelpers/types";
 import Bluebird from "bluebird";
-import { MARKET_NAME } from "../../helpers/env";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -75,3 +75,4 @@ func.dependencies = ["before-deploy", "core", "periphery-pre", "provider"];
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+

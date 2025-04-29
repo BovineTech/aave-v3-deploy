@@ -1,6 +1,6 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { V3_CORE_VERSION } from "../../helpers/constants";
+import { V3_CORE_VERSION } from "../../deployHelpers/constants";
 import {
   checkRequiredEnvironment,
   ConfigNames,
@@ -8,17 +8,17 @@ import {
   getTreasuryAddress,
   loadPoolConfig,
   savePoolTokens,
-} from "../../helpers/market-config-helpers";
-import { eNetwork, IAaveConfiguration } from "../../helpers/types";
+} from "../../deployHelpers/market-config-helpers";
+import { eNetwork, IAaveConfiguration } from "../../deployHelpers/types";
 import {
   configureReservesByHelper,
   initReservesByHelper,
-} from "../../helpers/init-helpers";
+} from "../../deployHelpers/init-helpers";
 import {
   POOL_ADDRESSES_PROVIDER_ID,
   POOL_DATA_PROVIDER,
-} from "../../helpers/deploy-ids";
-import { MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers/deploy-ids";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -120,3 +120,4 @@ func.dependencies = [
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+

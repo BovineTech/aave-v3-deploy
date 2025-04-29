@@ -1,6 +1,9 @@
-import { eAvalancheNetwork, IAaveConfiguration } from "./../../helpers/types";
+import {
+  eAvalancheNetwork,
+  IAaveConfiguration,
+} from "../../deployHelpers/types";
 import { AaveMarket } from "../aave/index";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 import {
   strategyDAI,
   strategyWETH,
@@ -84,3 +87,4 @@ export const AvalancheMarket: IAaveConfiguration = {
 };
 
 export default AvalancheMarket;
+

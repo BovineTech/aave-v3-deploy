@@ -1,7 +1,7 @@
 import { formatUnits } from "ethers/lib/utils";
 import { task } from "hardhat/config";
 import { hrtime } from "process";
-import { getWalletBalances } from "../../helpers";
+import { getWalletBalances } from "../../deployHelpers";
 
 task(`print-deployments`).setAction(
   async (_, { deployments, getNamedAccounts, ...hre }) => {
@@ -38,3 +38,4 @@ task(`print-deployments`).setAction(
     console.table(mintableTokens);
   }
 );
+

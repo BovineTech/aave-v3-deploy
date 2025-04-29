@@ -1,21 +1,21 @@
-import { loadPoolConfig } from "./../../helpers/market-config-helpers";
+import { loadPoolConfig } from "../../deployHelpers/market-config-helpers";
 import {
   getAToken,
   getPoolAddressesProvider,
-} from "./../../helpers/contract-getters";
+} from "../../deployHelpers/contract-getters";
 import {
   ATOKEN_IMPL_ID,
   INCENTIVES_PROXY_ID,
   POOL_ADDRESSES_PROVIDER_ID,
   TREASURY_PROXY_ID,
-} from "./../../helpers/deploy-ids";
-import { getAddressFromJson } from "./../../helpers/utilities/tx";
-import { getAaveProtocolDataProvider } from "../../helpers/contract-getters";
-import { waitForTx } from "../../helpers/utilities/tx";
-import { getPoolConfiguratorProxy } from "../../helpers/contract-getters";
+} from "../../deployHelpers/deploy-ids";
+import { getAddressFromJson } from "../../deployHelpers/utilities/tx";
+import { getAaveProtocolDataProvider } from "../../deployHelpers/contract-getters";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
+import { getPoolConfiguratorProxy } from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
-import { FORK } from "../../helpers/hardhat-config-helpers";
-import { COMMON_DEPLOY_PARAMS, MARKET_NAME } from "../../helpers/env";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
+import { COMMON_DEPLOY_PARAMS, MARKET_NAME } from "../../deployHelpers/env";
 
 // Returns true if tokens upgraded, false if not
 
@@ -88,3 +88,4 @@ task(`upgrade-atokens`)
       }
     }
   );
+

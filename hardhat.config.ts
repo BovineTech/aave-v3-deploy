@@ -5,7 +5,7 @@ import {
   getCommonNetworkConfig,
   hardhatNetworkSettings,
   loadTasks,
-} from "./helpers/hardhat-config-helpers";
+} from "./deployHelpers/hardhat-config-helpers";
 import {
   eArbitrumNetwork,
   eAvalancheNetwork,
@@ -15,8 +15,8 @@ import {
   eOptimismNetwork,
   ePolygonNetwork,
   eBaseNetwork,
-} from "./helpers/types";
-import { DEFAULT_NAMED_ACCOUNTS } from "./helpers/constants";
+} from "./deployHelpers/types";
+import { DEFAULT_NAMED_ACCOUNTS } from "./deployHelpers/constants";
 
 import "@nomicfoundation/hardhat-toolbox";
 import "hardhat-deploy";
@@ -220,3 +220,4 @@ export default {
     ],
   },
 };
+

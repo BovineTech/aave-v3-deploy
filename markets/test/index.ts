@@ -3,12 +3,12 @@ import {
   rateStrategyStableTwo,
   rateStrategyVolatileOne,
 } from "./rateStrategies";
-import { ZERO_ADDRESS } from "../../helpers";
+import { ZERO_ADDRESS } from "../../deployHelpers";
 import {
   IAaveConfiguration,
   eEthereumNetwork,
   eArbitrumNetwork,
-} from "../../helpers/types";
+} from "../../deployHelpers/types";
 
 import { CommonsConfig } from "./commons";
 import {
@@ -67,3 +67,4 @@ export const AaveMarket: IAaveConfiguration = {
 };
 
 export default AaveMarket;
+

@@ -1,4 +1,4 @@
-import { eContractid, IReserveParams } from "../../helpers/types";
+import { eContractid, IReserveParams } from "../../deployHelpers/types";
 import { rateStrategyDebtPrevention } from "./rateStrategies";
 
 export const strategyWONE: IReserveParams = {
@@ -144,3 +144,4 @@ export const strategyUSDT: IReserveParams = {
   debtCeiling: "500000000",
   borrowableIsolation: true,
 };
+

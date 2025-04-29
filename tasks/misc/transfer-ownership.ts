@@ -1,8 +1,8 @@
-import { POOL_ADMIN } from "./../../helpers/constants";
-import { ePolygonNetwork } from "./../../helpers/types";
-import { FORK } from "./../../helpers/hardhat-config-helpers";
-import { waitForTx } from "./../../helpers/utilities/tx";
-import { getOwnableContract } from "./../../helpers/contract-getters";
+import { POOL_ADMIN } from "../../deployHelpers/constants";
+import { ePolygonNetwork } from "../../deployHelpers/types";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
+import { getOwnableContract } from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
 import { isAddress } from "ethers/lib/utils";
 
@@ -27,3 +27,4 @@ task(`transfer-ownership`)
       console.log(`- Changed owner from ${currentOwner} to ${newOwner}`);
     }
   });
+

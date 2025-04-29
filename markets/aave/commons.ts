@@ -7,13 +7,13 @@ import {
   ePolygonNetwork,
   TransferStrategy,
   eBaseNetwork,
-} from "./../../helpers/types";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+} from "../../deployHelpers/types";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 import {
   ICommonConfiguration,
   eEthereumNetwork,
   eArbitrumNetwork,
-} from "../../helpers/types";
+} from "../../deployHelpers/types";
 import {
   rateStrategyStableOne,
   rateStrategyStableTwo,
@@ -183,3 +183,4 @@ export const CommonsConfig: ICommonConfiguration = {
     rateStrategyStableTwo,
   },
 };
+

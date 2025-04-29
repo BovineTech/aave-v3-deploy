@@ -1,11 +1,11 @@
 import {
   isTestnetMarket,
   loadPoolConfig,
-} from "./../helpers/market-config-helpers";
+} from "../deployHelpers/market-config-helpers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { MARKET_NAME } from "../helpers/env";
-import { getPoolConfiguratorProxy, waitForTx } from "../helpers";
+import { MARKET_NAME } from "../deployHelpers/env";
+import { getPoolConfiguratorProxy, waitForTx } from "../deployHelpers";
 
 /**
  * The following script runs after the deployment starts
@@ -60,3 +60,4 @@ const func: DeployFunction = async function ({
 func.tags = ["after-deploy"];
 func.runAtTheEnd = true;
 export default func;
+

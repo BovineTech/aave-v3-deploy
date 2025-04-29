@@ -1,11 +1,11 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
 import {
   POOL_ADDRESSES_PROVIDER_ID,
   POOL_IMPL_ID,
-} from "../../helpers/deploy-ids";
-import { MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers/deploy-ids";
+import { MARKET_NAME } from "../../deployHelpers/env";
 import {
   ConfigNames,
   eNetwork,
@@ -14,7 +14,7 @@ import {
   isL2PoolSupported,
   loadPoolConfig,
   waitForTx,
-} from "../../helpers";
+} from "../../deployHelpers";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -61,3 +61,4 @@ func.id = "PoolImplementation";
 func.tags = ["market"];
 
 export default func;
+

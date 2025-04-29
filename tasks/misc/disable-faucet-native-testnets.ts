@@ -3,8 +3,8 @@ import {
   getFaucet,
   getWrappedTokenGateway,
   getPoolConfiguratorProxy,
-} from "../../helpers/contract-getters";
-import { waitForTx } from "../../helpers/utilities/tx";
+} from "../../deployHelpers/contract-getters";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
 
 task(
   `disable-faucet-native-testnets`,
@@ -47,3 +47,4 @@ task(
     `Successfully updated reserve for asset ${wrappedTokenAddress} to setReserveBorrowing to false`
   );
 });
+

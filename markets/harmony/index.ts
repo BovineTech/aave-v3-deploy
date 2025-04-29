@@ -1,5 +1,5 @@
 import { rateStrategyDebtPrevention } from "./rateStrategies";
-import { eHarmonyNetwork, IAaveConfiguration } from "../../helpers/types";
+import { eHarmonyNetwork, IAaveConfiguration } from "../../deployHelpers/types";
 import { AaveMarket } from "../aave/index";
 import {
   strategyAAVE,
@@ -11,7 +11,7 @@ import {
   strategyWETH,
   strategyWONE,
 } from "./reservesConfig";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 // ----------------
 // POOL--SPECIFIC PARAMS
 // ----------------
@@ -85,3 +85,4 @@ export const HarmonyMarket: IAaveConfiguration = {
 };
 
 export default HarmonyMarket;
+

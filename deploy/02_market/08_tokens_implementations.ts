@@ -1,13 +1,13 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
 import {
   ATOKEN_IMPL_ID,
   DELEGATION_AWARE_ATOKEN_IMPL_ID,
   POOL_ADDRESSES_PROVIDER_ID,
   STABLE_DEBT_TOKEN_IMPL_ID,
   VARIABLE_DEBT_TOKEN_IMPL_ID,
-} from "../../helpers/deploy-ids";
+} from "../../deployHelpers/deploy-ids";
 import {
   AToken,
   DelegationAwareAToken,
@@ -15,9 +15,9 @@ import {
   StableDebtToken,
   VariableDebtToken,
 } from "../../typechain";
-import { V3_CORE_VERSION, ZERO_ADDRESS } from "../../helpers/constants";
-import { getContract, waitForTx } from "../../helpers";
-import { MARKET_NAME } from "../../helpers/env";
+import { V3_CORE_VERSION, ZERO_ADDRESS } from "../../deployHelpers/constants";
+import { getContract, waitForTx } from "../../deployHelpers";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -143,3 +143,4 @@ func.id = `TokenImplementations:${MARKET_NAME}:aave-v3-core@${V3_CORE_VERSION}`;
 func.tags = ["market", "tokens"];
 
 export default func;
+

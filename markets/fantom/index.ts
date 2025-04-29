@@ -1,11 +1,11 @@
-import { eFantomNetwork, IAaveConfiguration } from "../../helpers/types";
+import { eFantomNetwork, IAaveConfiguration } from "../../deployHelpers/types";
 import { AaveMarket } from "../aave/index";
 import {
   strategyDAI,
   strategyUSDT,
   strategyWETH,
 } from "../aave/reservesConfigs";
-import { ZERO_ADDRESS } from "../../helpers/constants";
+import { ZERO_ADDRESS } from "../../deployHelpers/constants";
 import {
   strategyAAVE,
   strategyLINK,
@@ -91,3 +91,4 @@ export const FantomMarket: IAaveConfiguration = {
 };
 
 export default FantomMarket;
+

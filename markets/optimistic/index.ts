@@ -1,4 +1,7 @@
-import { eOptimismNetwork, IAaveConfiguration } from "./../../helpers/types";
+import {
+  eOptimismNetwork,
+  IAaveConfiguration,
+} from "../../deployHelpers/types";
 import AaveMarket from "../aave";
 import {
   strategyDAI,
@@ -9,7 +12,7 @@ import {
   strategyUSDT,
   strategyAAVE,
 } from "../aave/reservesConfigs";
-import { ZERO_ADDRESS } from "../../helpers";
+import { ZERO_ADDRESS } from "../../deployHelpers";
 import { strategySUSD } from "./reservesConfig";
 
 export const OptimisticConfig: IAaveConfiguration = {
@@ -76,3 +79,4 @@ export const OptimisticConfig: IAaveConfiguration = {
 };
 
 export default OptimisticConfig;
+

@@ -1,5 +1,5 @@
 import { rateStrategyStableOne } from "./../aave/rateStrategies";
-import { eContractid, IReserveParams } from "../../helpers/types";
+import { eContractid, IReserveParams } from "../../deployHelpers/types";
 
 export const strategySUSD: IReserveParams = {
   strategy: rateStrategyStableOne,
@@ -18,3 +18,4 @@ export const strategySUSD: IReserveParams = {
   debtCeiling: "0",
   borrowableIsolation: false,
 };
+

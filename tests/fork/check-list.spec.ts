@@ -1,8 +1,11 @@
 import { parseEther } from "ethers/lib/utils";
 import { BigNumber } from "ethers";
 import { makeSuite, TestEnv } from "../utils/make-suite";
-import { parseUnitsFromToken, waitForTx } from "../../helpers/utilities/tx";
-import { MAX_UINT_AMOUNT } from "../../helpers/constants";
+import {
+  parseUnitsFromToken,
+  waitForTx,
+} from "../../deployHelpers/utilities/tx";
+import { MAX_UINT_AMOUNT } from "../../deployHelpers/constants";
 import { ethers, network } from "hardhat";
 
 const { expect } = require("chai");
@@ -301,3 +304,4 @@ makeSuite("Mainnet Check list", (testEnv: TestEnv) => {
     ).to.be.revertedWith("Fallback not allowed");
   });
 });
+

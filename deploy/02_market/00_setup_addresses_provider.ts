@@ -1,26 +1,26 @@
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { V3_CORE_VERSION, ZERO_ADDRESS } from "../../helpers/constants";
+import { V3_CORE_VERSION, ZERO_ADDRESS } from "../../deployHelpers/constants";
 import {
   checkRequiredEnvironment,
   ConfigNames,
   getReserveAddresses,
   loadPoolConfig,
-} from "../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import {
   POOL_ADDRESSES_PROVIDER_ID,
   POOL_DATA_PROVIDER,
-} from "../../helpers/deploy-ids";
-import { addMarketToRegistry } from "../../helpers/init-helpers";
-import { eNetwork } from "../../helpers/types";
+} from "../../deployHelpers/deploy-ids";
+import { addMarketToRegistry } from "../../deployHelpers/init-helpers";
+import { eNetwork } from "../../deployHelpers/types";
 import { getAddress } from "ethers/lib/utils";
-import { waitForTx } from "../../helpers/utilities/tx";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
 import { PoolAddressesProvider } from "../../typechain";
 import {
   containsSameMembers,
   isEqualAddress,
-} from "../../helpers/utilities/utils";
-import { COMMON_DEPLOY_PARAMS, MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers/utilities/utils";
+import { COMMON_DEPLOY_PARAMS, MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function (hre: HardhatRuntimeEnvironment) {
   const { getNamedAccounts, deployments } = hre;
@@ -121,3 +121,4 @@ func.dependencies = ["before-deploy", "core", "periphery-pre", "token-setup"];
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+

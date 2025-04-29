@@ -6,7 +6,7 @@ import {
   getPoolConfiguratorProxy,
   POOL_CONFIGURATOR_PROXY_ID,
   POOL_DATA_PROVIDER,
-} from "../../helpers";
+} from "../../deployHelpers";
 
 task(`verify-tokens`).setAction(
   async (_, { deployments, getNamedAccounts, ...hre }) => {
@@ -54,3 +54,4 @@ task(`verify-tokens`).setAction(
     }
   }
 );
+

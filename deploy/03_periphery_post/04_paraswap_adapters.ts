@@ -1,7 +1,7 @@
-import { getParamPerNetwork } from "../../helpers/market-config-helpers";
+import { getParamPerNetwork } from "../../deployHelpers/market-config-helpers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
 import {
   ConfigNames,
   eNetwork,
@@ -10,8 +10,8 @@ import {
   POOL_ADDRESSES_PROVIDER_ID,
   POOL_ADMIN,
   V3_PERIPHERY_VERSION,
-} from "../../helpers";
-import { MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -69,3 +69,4 @@ func.id = `ParaswapAdapters:${MARKET_NAME}:aave-v3-periphery@${V3_PERIPHERY_VERS
 func.tags = ["periphery-post", "paraswap-adapters"];
 
 export default func;
+

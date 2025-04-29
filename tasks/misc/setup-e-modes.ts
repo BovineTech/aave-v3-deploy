@@ -1,16 +1,16 @@
 import {
   getOracleByAsset,
   getReserveAddress,
-} from "../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import { task } from "hardhat/config";
-import { waitForTx } from "../../helpers/utilities/tx";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
 import {
   ConfigNames,
   loadPoolConfig,
-} from "../../helpers/market-config-helpers";
-import { getPoolConfiguratorProxy } from "../../helpers/contract-getters";
-import { MARKET_NAME } from "../../helpers/env";
-import { ZERO_ADDRESS } from "../../helpers";
+} from "../../deployHelpers/market-config-helpers";
+import { getPoolConfiguratorProxy } from "../../deployHelpers/contract-getters";
+import { MARKET_NAME } from "../../deployHelpers/env";
+import { ZERO_ADDRESS } from "../../deployHelpers";
 
 task(`setup-e-modes`, `Setups e-modes from config`).setAction(
   async (_, hre) => {
@@ -58,3 +58,4 @@ task(`setup-e-modes`, `Setups e-modes from config`).setAction(
     }
   }
 );
+

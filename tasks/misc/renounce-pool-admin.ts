@@ -1,12 +1,15 @@
-import { POOL_ADMIN } from "./../../helpers/constants";
-import { FORK } from "../../helpers/hardhat-config-helpers";
-import { POOL_ADDRESSES_PROVIDER_ID } from "../../helpers/deploy-ids";
+import { POOL_ADMIN } from "../../deployHelpers/constants";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
+import { POOL_ADDRESSES_PROVIDER_ID } from "../../deployHelpers/deploy-ids";
 import {
   getACLManager,
   getPoolAddressesProvider,
-} from "../../helpers/contract-getters";
+} from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
-import { getAddressFromJson, waitForTx } from "../../helpers/utilities/tx";
+import {
+  getAddressFromJson,
+  waitForTx,
+} from "../../deployHelpers/utilities/tx";
 import { exit } from "process";
 
 task(
@@ -80,3 +83,4 @@ task(
 
   return;
 });
+

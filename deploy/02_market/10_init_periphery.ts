@@ -1,18 +1,18 @@
 import {
   ConfigNames,
   loadPoolConfig,
-} from "../../helpers/market-config-helpers";
+} from "../../deployHelpers/market-config-helpers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../helpers/env";
-import { V3_PERIPHERY_VERSION } from "../../helpers/constants";
+import { COMMON_DEPLOY_PARAMS } from "../../deployHelpers/env";
+import { V3_PERIPHERY_VERSION } from "../../deployHelpers/constants";
 import {
   POOL_ADDRESSES_PROVIDER_ID,
   POOL_PROXY_ID,
-} from "../../helpers/deploy-ids";
-import { checkRequiredEnvironment as checkRequiredEnvironment } from "../../helpers/market-config-helpers";
-import { eNetwork } from "../../helpers/types";
-import { MARKET_NAME } from "../../helpers/env";
+} from "../../deployHelpers/deploy-ids";
+import { checkRequiredEnvironment as checkRequiredEnvironment } from "../../deployHelpers/market-config-helpers";
+import { eNetwork } from "../../deployHelpers/types";
+import { MARKET_NAME } from "../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -56,3 +56,4 @@ func.dependencies = [
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+

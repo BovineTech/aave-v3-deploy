@@ -1,5 +1,5 @@
 import { parseUnits } from "ethers/lib/utils";
-import { IInterestRateStrategyParams } from "../../helpers/types";
+import { IInterestRateStrategyParams } from "../../deployHelpers/types";
 
 export const rateStrategyVolatileOne = {
   name: "rateStrategyVolatileOne",
@@ -37,3 +37,4 @@ export const rateStrategyStableTwo = {
   stableRateExcessOffset: parseUnits("0.05", 27).toString(),
   optimalStableToTotalDebtRatio: parseUnits("0.2", 27).toString(),
 };
+

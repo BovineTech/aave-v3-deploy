@@ -1,11 +1,11 @@
-import { eNetwork } from "../../helpers/types";
-import { loadPoolConfig } from "../../helpers/market-config-helpers";
-import { getPoolConfiguratorProxy } from "../../helpers/contract-getters";
+import { eNetwork } from "../../deployHelpers/types";
+import { loadPoolConfig } from "../../deployHelpers/market-config-helpers";
+import { getPoolConfiguratorProxy } from "../../deployHelpers/contract-getters";
 import { task } from "hardhat/config";
-import { waitForTx } from "../../helpers/utilities/tx";
-import { getAaveProtocolDataProvider } from "../../helpers/contract-getters";
-import { MARKET_NAME } from "../../helpers/env";
-import { FORK } from "../../helpers/hardhat-config-helpers";
+import { waitForTx } from "../../deployHelpers/utilities/tx";
+import { getAaveProtocolDataProvider } from "../../deployHelpers/contract-getters";
+import { MARKET_NAME } from "../../deployHelpers/env";
+import { FORK } from "../../deployHelpers/hardhat-config-helpers";
 import chalk from "chalk";
 import { exit } from "process";
 
@@ -123,3 +123,4 @@ task(`review-stable-borrow`, ``)
       }
     }
   );
+

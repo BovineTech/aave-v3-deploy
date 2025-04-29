@@ -1,26 +1,26 @@
-import { TESTNET_REWARD_TOKEN_PREFIX } from "./../../../helpers/deploy-ids";
+import { TESTNET_REWARD_TOKEN_PREFIX } from "../../../deployHelpers/deploy-ids";
 import {
   getSymbolsByPrefix,
   isIncentivesEnabled,
-} from "./../../../helpers/market-config-helpers";
+} from "../../../deployHelpers/market-config-helpers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { DeployFunction } from "hardhat-deploy/types";
-import { COMMON_DEPLOY_PARAMS } from "../../../helpers/env";
+import { COMMON_DEPLOY_PARAMS } from "../../../deployHelpers/env";
 import {
   checkRequiredEnvironment,
   ConfigNames,
   getReserveAddresses,
   isProductionMarket,
   loadPoolConfig,
-} from "../../../helpers/market-config-helpers";
-import { eNetwork } from "../../../helpers/types";
-import { TESTNET_PRICE_AGGR_PREFIX } from "../../../helpers/deploy-ids";
+} from "../../../deployHelpers/market-config-helpers";
+import { eNetwork } from "../../../deployHelpers/types";
+import { TESTNET_PRICE_AGGR_PREFIX } from "../../../deployHelpers/deploy-ids";
 import {
   MOCK_CHAINLINK_AGGREGATORS_PRICES,
   V3_CORE_VERSION,
-} from "../../../helpers/constants";
+} from "../../../deployHelpers/constants";
 import Bluebird from "bluebird";
-import { MARKET_NAME } from "../../../helpers/env";
+import { MARKET_NAME } from "../../../deployHelpers/env";
 
 const func: DeployFunction = async function ({
   getNamedAccounts,
@@ -78,3 +78,4 @@ func.dependencies = ["before-deploy", "tokens-setup", "periphery-pre"];
 func.skip = async () => checkRequiredEnvironment();
 
 export default func;
+
